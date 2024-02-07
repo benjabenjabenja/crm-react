@@ -10,7 +10,7 @@ const Layout = () => {
                 <Nav />
             </aside>
             {/* contenedor donde se renderizan las routes */}
-            <main className="md:w-3/4 p-10 mf:h-screen overflow-scroll">
+            <main className="md:w-3/4 p-10 mf:h-screen overflow-x-hidden">
                 <Outlet />
             </main>
         </div>

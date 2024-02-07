@@ -1,48 +1,14 @@
 /* eslint-disable react-refresh/only-export-components */
 import { useLoaderData } from "react-router-dom";
+import { get_clientes } from "../data/cliente";
 import TablaClientes from "../components/TablaClientes";
 import { isValidArray } from "../helpers";
 
 
 // se importa en el routes-pages para la carga de datos (como un hook)
 export function loader() {
-    return [
-        {
-            id: 1,
-            nombre: "Juan",
-            telefono: 102013313,
-            email: "juan@juan.com",
-            empresa: "Codigo Con Juan",
-        },
-        {
-            id: 2,
-            nombre: "Karen",
-            telefono: 138198313,
-            email: "karen@juan.com",
-            empresa: "Codigo Con Juan",
-        },
-        {
-            id: 3,
-            nombre: "Josue",
-            telefono: 31983913,
-            email: "josue@juan.com",
-            empresa: "Codigo Con Juan",
-        },
-        {
-            id: 4,
-            nombre: "Miguel",
-            telefono: 319381983,
-            email: "miguel@juan.com",
-            empresa: "Codigo Con Juan",
-        },
-        {
-            id: 5,
-            nombre: "Pedro",
-            telefono: 1398198938,
-            email: "pedro@juan.com",
-            empresa: "Codigo Con Juan",
-        },
-    ];
+    const clientes = get_clientes();
+    return clientes;
 }
 
 function Index() {

@@ -12,7 +12,7 @@ const Cliente = ({ data }) => {
                 <p><span className="text-gray-800 uppercase font-bold">Email: </span>{email}</p>
                 <p><span className="text-gray-800 uppercase font-bold">Tel: </span>{telefono}</p>
             </td>
-            <td className="py-2 text-slate-100 flex justify-evenly gap-3">
+            <td className="py-2 text-slate-100 flex justify-around gap-3 mt-2">
                 <button
                     type="button"
                     className="text-slate-100 hover:text-slate-800 px-3 py-2 m-auto hover:border-slate-800 border rounded-md font-bold text-xs transition__all"

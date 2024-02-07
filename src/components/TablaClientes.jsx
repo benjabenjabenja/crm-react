@@ -1,18 +1,24 @@
 /* eslint-disable react/prop-types */
-import { isValidArray } from "../helpers";
+import { isValidArray, uniqueid } from "../helpers";
+import Cliente from "./Cliente";
 
-const TablaClientes = ({ th, clientes }) => {
-    console.log({ clientes })
+const TablaClientes = ({ th, data }) => {
     return (
-        <table className="w-full bg-slate-400 shadow-md table-auto mt-4">
-            <thead className="bg-slate-800 text-white">
+        <table className="w-full bg-slate-400 shadow-md table-auto mt-4 rounded-md">
+            <thead className="bg-slate-800 text-white rounded-md">
+                <tr>
                 {
-                    isValidArray(th) && th.map( (e,i) => <th key={i} className="p-2">{e}</th>)
+                    isValidArray(th) && th.map( e => <th key={uniqueid()} className="p-2">{e}</th>)
                 }
-                <th className="p-2">Cliente</th>
-                <th className="p-2">Contacto</th>
-                <th className="p-2">Acciones</th>
+                </tr>
             </thead>
+            <tbody>
+                {
+                    isValidArray(data) && data.map( d => (
+                        <Cliente data={d} key={d.id} />
+                    ))
+                }
+            </tbody>
         </table>
     );
 };

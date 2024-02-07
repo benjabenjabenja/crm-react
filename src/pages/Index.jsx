@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 import { useLoaderData } from "react-router-dom";
 import TablaClientes from "../components/TablaClientes";
 import { isValidArray } from "../helpers";
@@ -53,7 +54,7 @@ function Index() {
             <p className="mt-3">administra tus clientes</p>
 
             {
-                isValidArray(data) ? (<TablaClientes clientes={data} />): (<p className="text-center mt-10 text-xl">No hay clientes</p>) 
+                isValidArray(data) ? (<TablaClientes th={['Clientes', 'Contacto', 'Acciones']} data={data} />): (<p className="text-center mt-10 text-xl">No hay clientes</p>) 
             }
         </>
     );

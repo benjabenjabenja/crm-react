@@ -36,7 +36,8 @@ const router = createBrowserRouter([
 			},
 			{
 				path: 'clientes/:id/eliminar',
-				action: eliminarAction
+				action: eliminarAction,
+				errorElement: <ErrorPage />
 			}
 		]
 	},

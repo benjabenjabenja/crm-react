@@ -14,6 +14,7 @@ export function loader() {
 function Index() {
     // data que se carga desde el loader
     const data = useLoaderData();
+    
     return (
         <>
             <h1 className="font-black text-4xl text-slate-800">Clientes</h1>

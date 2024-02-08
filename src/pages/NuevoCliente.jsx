@@ -1,9 +1,11 @@
 /* eslint-disable no-useless-escape */
 /* eslint-disable react-refresh/only-export-components */
-import { useNavigate, Form, useActionData } from "react-router-dom";
-import Formulario from "../components/Formulario";
+import { useNavigate, Form, useActionData, redirect } from "react-router-dom";
 import { uniqueid } from "../helpers";
-import Error from "../components/Error";
+import Formulario from "../components/Formulario";
+import ErrorAlertForm from "../components/ErrorAlertForm";
+import { add_cliente } from "../data/cliente";
+
 // responde al method 'post' definido en el formulario
 export async function action({ request }) {
     const formData = await request.formData();
@@ -20,6 +22,11 @@ export async function action({ request }) {
     if (Object.keys(errores).length > 0) {
         return errores;
     }
+
+    // guardo los datos
+    await add_cliente(format);
+
+    return redirect('/');
 }
 
 const NuevoCliente = () => {
@@ -48,7 +55,7 @@ const NuevoCliente = () => {
             </div>
             <div className="bg-white-300 shadow-md rounded-md mf:w-3/4 mx-auto mt-2 px-5 py-10">
                 {
-                    errores?.length && errores?.map(m => <Error key={uniqueid()}>{m}</Error> )
+                    errores?.length && errores?.map(m => <ErrorAlertForm key={uniqueid()}>{m}</ErrorAlertForm> )
                 }
                 <Form
                     method="post"

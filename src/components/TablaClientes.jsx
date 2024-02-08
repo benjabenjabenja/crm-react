@@ -6,7 +6,7 @@ const TablaClientes = ({ th, data }) => {
     return (
         <table className="w-full bg-slate-400 shadow-md table-auto mt-4 rounded-md">
             <thead className="bg-slate-800 text-white rounded-md">
-                <tr>
+                <tr className="grid grid-cols-3">
                 {
                     isValidArray(th) && th.map( e => <th key={uniqueid()} className="p-2">{e}</th>)
                 }

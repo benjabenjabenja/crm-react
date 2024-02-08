@@ -31,10 +31,7 @@ export async function update_cliente(payload) {
 export async function delete_cliente(payload) {
     try {
         const response = await fetch(`${url_web_services}/clientes/${payload}`, {
-            method: 'DELETE',
-            body: JSON.stringify(payload),
-            headers: {
-                'Content-Type': 'application/json'}
+            method: 'DELETE'
         });
         const r = await response.json();
         return r;

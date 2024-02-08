@@ -5,7 +5,10 @@ import { delete_cliente } from "../data/cliente";
 
 export async function action({params}) {
     const { id } = params;
-    await delete_cliente(id);
+    const result = confirm('Seguro que desa eliminar el cliente ' + id);
+    if (result) {
+        await delete_cliente(id);
+    }
     return redirect("/");
 }
 

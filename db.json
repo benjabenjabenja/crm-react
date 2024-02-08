@@ -8,11 +8,12 @@
       "empresa": "Codigo Con Juan"
     },
     {
-      "id": "2",
-      "nombre": "Karen",
-      "telefono": 138198313,
-      "email": "karen@juan.com",
-      "empresa": "Codigo Con Juan"
+      "nombre": "Karen2",
+      "empresa": "Codigo Con Juan",
+      "email": "karen2@juan.com",
+      "telefono": "138198313",
+      "notas": "asdfsdf",
+      "id": "2"
     },
     {
       "id": "3",
@@ -34,14 +35,6 @@
       "telefono": 1398198938,
       "email": "pedro@juan.com",
       "empresa": "Codigo Con Juan"
-    },
-    {
-      "id": "f3d6",
-      "nombre": "jose benjamin",
-      "empresa": "AyiGroup",
-      "email": "jgonzalez.benjamin@gmail.com",
-      "telefono": "02494466860",
-      "notas": "asdfasdfadfdf"
     }
   ]
 }

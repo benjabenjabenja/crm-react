@@ -13,6 +13,36 @@ export async function get_cliente_by_id(id = '') {
 
     return await result.json();
 }
+export async function update_cliente(payload) {
+    try {
+        const response = await fetch(`${url_web_services}/clientes/${payload.id}`, {
+            method: 'PUT',
+            body: JSON.stringify(payload),
+            headers: {
+                'Content-Type': 'application/json'}
+        });
+        const r = await response.json();
+        return r;
+    } catch (error) {
+        console.error({ payload });
+        return false;
+    }
+}
+export async function delete_cliente(payload) {
+    try {
+        const response = await fetch(`${url_web_services}/clientes/${payload}`, {
+            method: 'DELETE',
+            body: JSON.stringify(payload),
+            headers: {
+                'Content-Type': 'application/json'}
+        });
+        const r = await response.json();
+        return r;
+    } catch (error) {
+        console.error({ payload });
+        return false;
+    }
+}
 export async function add_cliente(datos) {
     try {
         const response = await fetch(`${url_web_services}/clientes`, {

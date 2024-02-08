@@ -1,4 +1,7 @@
-const Formulario = () => {
+/* eslint-disable react/prop-types */
+/* eslint-disable no-unused-vars */
+const Formulario = ({ cliente }) => {
+    const { nombre, empresa, telefono, email, notas } = cliente || { nombre: '', empresa: '', telefono: '', email: '', notas: '' };
     return (
         <>
             <div className="mb-4">
@@ -11,6 +14,7 @@ const Formulario = () => {
                     className="mt-2 block w-full p-3 bg-slate-300 rounded-md"
                     placeholder="Nombre del Cliente"
                     name="nombre"
+                    defaultValue={nombre}
                     required
                 />
             </div>
@@ -24,6 +28,7 @@ const Formulario = () => {
                     className="mt-2 block w-full p-3 bg-slate-300 rounded-md"
                     placeholder="Empresa del Cliente"
                     name="empresa"
+                    defaultValue={empresa}
                     required
                 />
             </div>
@@ -38,6 +43,7 @@ const Formulario = () => {
                     className="mt-2 block w-full p-3 bg-slate-300 rounded-md"
                     placeholder="Email del Cliente"
                     name="email"
+                    defaultValue={email}
                     required
                 />
             </div>
@@ -52,6 +58,7 @@ const Formulario = () => {
                     className="mt-2 block w-full p-3 bg-slate-300 rounded-md"
                     placeholder="Teléfono del Cliente"
                     name="telefono"
+                    defaultValue={telefono}
                     required
                 />
             </div>
@@ -65,6 +72,7 @@ const Formulario = () => {
                     type="text"
                     className="mt-2 block w-full p-3 bg-slate-300 rounded-md h-40 align-self"
                     placeholder="Notas del Cliente"
+                    defaultValue={notas}
                     name="notas"
                 />
             </div>

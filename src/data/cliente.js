@@ -7,7 +7,12 @@ export async function get_clientes() {
 
     return response;
 }
+export async function get_cliente_by_id(id = '') {
+    const url = `${url_web_services}/clientes/${id}`;
+    const result = await fetch(url);
 
+    return await result.json();
+}
 export async function add_cliente(datos) {
     try {
         const response = await fetch(`${url_web_services}/clientes`, {
